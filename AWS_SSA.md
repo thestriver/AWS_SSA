@@ -104,3 +104,63 @@ Define and launch AWS resources in a logically isolated virtual network
 ![](assets/images/saa/vpc2.png)
 
 
+<h2>Amazon VPC features</h2>
+
+**Reachability Analyzer** Reachability Analyzer is a static configuration analysis tool that enables you to analyze and debug network reachability between two resources in your VPC.
+
+
+**VPC Flow Logs**: You can monitor your VPC flow logs delivered to Amazon S3 or Amazon CloudWatch to gain operational visibility into your network dependencies and traffic patterns, detect anomalies and prevent data leakage, or troubleshoot network connectivity and configuration issues.
+
+**VPC Traffic Mirroring:** VPC traffic mirroring allows you to copy network traffic from an elastic network interface of Amazon EC2 instances and then send the traffic to out-of-band security and monitoring appliances for deep packet inspection.
+
+**Ingress Routing:** This allows you to route all incoming and outgoing traffic flowing to/from an Internet Gateway (IGW) or Virtual Private Gateway (VGW) to a specific EC2 instance’s Elastic Network Interface. 
+
+An elastic network interface is a logical networking component in a VPC that represents a virtual network card.
+
+A customer gateway device is a physical or software appliance that you own or manage in your on-premises network (on your side of a Site-to-Site VPN connection).
+
+An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet.
+
+![](assets/images/saa/vpc8.png)
+
+Read more: https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html
+
+
+**Security Groups:** Security groups act as a firewall for associated Amazon EC2 instances, controlling both inbound and outbound traffic at the **instance level.**
+
+**Network Access Control List**: A network access control list (ACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more **subnets.** 
+
+
+![](assets/images/saa/vpc3.png)
+
+![](assets/images/saa/vpc4.png)
+Add a route to the main route table that points all traffic (0.0.0.0/0) to the internet gateway.
+
+By default, a default subnet is a public subnet, because the main route table sends the subnet's traffic that is destined for the internet to the internet gateway. You can make a default subnet into a private subnet by **removing the route from the destination 0.0.0.0/0 to the internet gateway**. However, if you do this, no EC2 instance running in that subnet can access the internet.
+
+Instances that you launch into a **default subnet** receive both a public IPv4 address and a private IPv4 address, and both public and private DNS hostnames. 
+
+![](assets/images/saa/vpc5.png)
+
+<h2>A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. Instances in either VPC can communicate with each other as if they are within the same network.</h2> 
+
+![](assets/images/saa/vpc6.png)
+
+
+![](assets/images/saa/vpc7.png)
+
+
+
+Bastion hosts (also called “jump servers”) are often used as a best practice for accessing privately accessible hosts within a system environment. 
+
+you can reduce your system’s attack surface while also offering greater visibility into commands issued on your hosts. The solution is to replace your bastion host by using Amazon EC2 Systems Manager.
+
+![](assets/images/saa/vpc9.png)
+
+<h2>AWS Direct Connect</h2>
+Create a dedicated network connection between your premises and AWS
+
+![](assets/images/saa/vpc10.png)
+
+
+
