@@ -162,5 +162,24 @@ Create a dedicated network connection between your premises and AWS
 
 ![](assets/images/saa/vpc10.png)
 
+![](assets/images/saa/vpc12.png)
+Endpoints are powered by AWS PrivateLink.
+
+There are *three types of VPC endpoints*:
+
+- Interface endpoints - cost money
+elastic network interface with a private IP address from the IP address range of your subnet. an entry point for traffic destined to a **supported AWS service or a VPC endpoint service.**
+![](assets/images/saa/vpc13.png)
+- Gateway Load Balancer endpoints
+elastic network interface with a private IP address from the IP address range of your subnet. **entry point to intercept traffic and route it to a service that you've configured using Gateway Load Balancers**
+
+- Gateway endpoints
+Free..
+supports: 
+Amazon S3
+DynamoDB
+You specify a gateway endpoint as a route table target for traffic that is destined for the supported AWS services.
+
+![](assets/images/saa/vpc14.png)
 
 
