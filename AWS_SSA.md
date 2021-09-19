@@ -182,4 +182,31 @@ You specify a gateway endpoint as a route table target for traffic that is desti
 
 ![](assets/images/saa/vpc14.png)
 
+The ipv4 address of the network interface is always its private ipv4 adress.
+
+
+![](assets/images/saa/vpc15.png)
+
+
+![](assets/images/saa/nacl1.png)
+
+**When you launch an instance in a VPC, you can assign up to five security groups to the instance. Security groups act at the instance level, not the subnet level. Therefore, each instance in a subnet in your VPC can be assigned to a different set of security groups.**
+
+**You can specify allow rules, but not deny rules.** - something a NACL can do i.e. it can block specific IP address
+
+![](assets/images/saa/nacl2.png)
+
+Security group rules
+You can add or remove rules for a security group (also referred to as authorizing or revoking inbound or outbound access). A rule applies either to inbound traffic (ingress) or outbound traffic (egress). You can grant access to a specific CIDR range, or to another security group in your VPC or in a peer VPC (requires a VPC peering connection).
+
+Stale security group rules
+If your VPC has a VPC peering connection with another VPC, a security group rule can reference another security group in the peer VPC. This allows instances that are associated with the referenced security group and those that are associated with the referencing security group to communicate with each other.
+
+If the owner of the peer VPC deletes the referenced security group, or if you or the owner of the peer VPC deletes the VPC peering connection, the security group rule is marked as stale. 
+
+
+![](assets/images/saa/sn1.png)
+
+![](assets/images/saa/sn2.png)
+
 
