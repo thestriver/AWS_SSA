@@ -210,3 +210,15 @@ If the owner of the peer VPC deletes the referenced security group, or if you or
 ![](assets/images/saa/sn2.png)
 
 
+![](assets/images/saa/nat1.png)
+
+We use the term NAT in this documentation to follow common IT practice, though the actual role of a NAT device is both address translation and port address translation (PAT).
+
+![](assets/images/saa/nat2.png)
+
+You can now launch NAT Gateways in your Amazon Virtual Private Cloud (VPC) without associating an internet gateway to your VPC.
+
+We recommend that you use NAT gateways because they provide better availability and bandwidth and require less effort on your part to administer.
+
+
+![](assets/images/saa/nat3.png)
