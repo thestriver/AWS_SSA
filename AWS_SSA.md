@@ -97,6 +97,8 @@ ___
 <h1>VPC</h1>
 Define and launch AWS resources in a logically isolated virtual network
 
+![](assets/images/saa/vpc0.png)
+
 ![](assets/images/saa/vpc.png)
 
 ![](assets/images/saa/vpc1.png)
@@ -222,3 +224,61 @@ We recommend that you use NAT gateways because they provide better availability 
 
 
 ![](assets/images/saa/nat3.png)
+
+
+
+<h2>AWS Identity and Access Management (IAM)</h2>
+Securely manage access to AWS services and resources
+
+![](assets/images/saa/iam1.png)
+
+![](assets/images/saa/iam2.png)
+
+*Best Practices*
+
+Users – Create individual users.
+
+Groups – Manage permissions with groups.
+
+Permissions – Grant least privilege.
+
+Auditing – Turn on AWS CloudTrail.
+
+Password – Configure a strong password policy.
+
+MFA – Enable MFA for privileged users.
+
+Roles – Use IAM roles for Amazon EC2 instances.
+
+Sharing – Use IAM roles to share access.
+
+Rotate – Rotate security credentials regularly.
+
+Conditions – Restrict privileged access further with conditions.
+
+Root – Reduce or remove use of root.
+
+![](assets/images/saa/iam3.png)
+
+![](assets/images/saa/iam4.png)
+
+
+![](assets/images/saa/iam5.png)
+
+<h2>Amazon Cognito</h2>
+Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily.
+
+
+![](assets/images/saa/cog1.png)
+
+![](assets/images/saa/cog2.png)
+
+![](assets/images/saa/cog3.png)
+
+![](assets/images/saa/cog4.png)
+
+
+<h2>AWS Single Sign-On</h2>
+Centrally manage access to multiple AWS accounts or applications.AWS Single Sign-On (AWS SSO) is where you create, or connect, your workforce identities in AWS once and manage access centrally across your AWS organization. You can choose to manage access just to your AWS accounts or cloud applications. 
+
+ <h2>AWS CLI & SDK</h2>
