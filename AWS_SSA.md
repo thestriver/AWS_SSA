@@ -303,3 +303,50 @@ You can also pay for Dedicated Hosts which provide you with EC2 instance capacit
 ![](assets/images/saa/ec2p1.png)
 
 ![](assets/images/saa/ami.png)
+
+![](assets/images/saa/ami2.png)
+
+
+<h2>Auto Scaling groups</h2>
+
+An Auto Scaling group contains a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management. 
+
+![](assets/images/saa/asg.png)
+
+![](assets/images/saa/asg1.png)
+
+launch templates is launch configurations with versioning
+
+<h2>Elastic Load Balancing</h2>
+
+![](assets/images/saa/elb1.png)
+
+Elastic Load Balancing types
+Elastic Load Balancing provides four types of load balancers that can be used with your Auto Scaling group: Application Load Balancers, Network Load Balancers, Gateway Load Balancers, and Classic Load Balancers.
+
+There is a key difference in how the load balancer types are configured. With Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, instances are registered as targets with a target group, and you route traffic to the target group. With Classic Load Balancers, instances are registered directly with the load balancer.
+
+Application Load Balancer
+Routes and load balances at the application layer (HTTP/HTTPS), and supports path-based routing. An Application Load Balancer can route requests to ports on one or more registered targets, such as EC2 instances, in your virtual private cloud (VPC).
+
+Network Load Balancer
+Routes and load balances at the transport layer (TCP/UDP Layer-4), based on address information extracted from the TCP packet header, not from packet content. Network Load Balancers can handle traffic bursts, retain the source IP of the client, and use a fixed IP for the life of the load balancer.
+
+Gateway Load Balancer
+Distributes traffic to a fleet of appliance instances. Provides scale, availability, and simplicity for third-party virtual appliances, such as firewalls, intrusion detection and prevention systems, and other appliances. Gateway Load Balancers work with virtual appliances that support the GENEVE protocol. Additional technical integration is required, so make sure to consult the user guide before choosing a Gateway Load Balancer.
+
+Classic Load Balancer
+Routes and load balances either at the transport layer (TCP/SSL), or at the application layer (HTTP/HTTPS). A Classic Load Balancer supports either EC2-Classic or a VPC.
+![](assets/images/saa/elb2.png)
+
+![](assets/images/saa/elb3.png)
+
+![](assets/images/saa/elb4.png)
+
+
+![](assets/images/saa/elb5.png)
+
+ELB Health checks : it doesnt terminate unhelathy instances it just redirects to helathy instances
+
+![](assets/images/saa/elb6.png)
+
