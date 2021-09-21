@@ -282,3 +282,18 @@ Amazon Cognito lets you add user sign-up, sign-in, and access control to your we
 Centrally manage access to multiple AWS accounts or applications.AWS Single Sign-On (AWS SSO) is where you create, or connect, your workforce identities in AWS once and manage access centrally across your AWS organization. You can choose to manage access just to your AWS accounts or cloud applications. 
 
  <h2>AWS CLI & SDK</h2>
+ AWS Command Line Interface
+The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services. With just one tool to download and configure, you can control multiple AWS services from the command line and automate them through scripts.
+
+SDK:
+Tools to Build on AWS
+Easily develop applications on AWS in the programming language of your choice
+
+
+
+<h2>DNS</h2>
+
+https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/
+
+
+![](assets/images/saa/dns.png)
