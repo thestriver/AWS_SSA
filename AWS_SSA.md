@@ -357,3 +357,36 @@ Amazon Elastic File System (EFS) automatically grows and shrinks as you add and 
 
 <h2>Amazon Elastic Block Store (EBS)</h2>
 Easy to use, high performance block storage at any scale. Virtual hard drive in the cloud. Create new volumes to EC2 instances, backup via snapshots and easy encryption.
+
+Throughput - data transfer rate
+Volumes are automatically replicated within their AZ.
+
+Amazon EBS provides multiple volume types that allow you to optimize storage performance and cost for a broad range of applications. These volume types are divided into **two major categories:**
+**SSD-backed storage for transactional workloads, such as databases, virtual desktops and boot volumes,** and
+
+**HDD-backed storage for throughput intensive workloads, such as MapReduce and log processing.**
+
+SSD-based volumes include the **highest performance EBS volumes (io2 and io1)** for your most demanding transactional applications including SAP HANA, Microsoft SQL Server and IBM DB2, and **General Purpose SSD volumes (gp3 and gp2)** that balance price and performance for transactional applications, including virtual desktops, test and development environments, and interactive gaming applications.
+
+HDD-based volumes include **Throughput Optimized HDD (st1)** for frequently accessed, throughput intensive workloads and the **lowest cost Cold HDD (sc1) for less frequently accessed data.**
+
+![](assets/images/saa/ebs1.png)
+
+![](assets/images/saa/ebs2.png)
+
+![](assets/images/saa/ebs3.png)
+
+![](assets/images/saa/ebs4.png)
+
+![](assets/images/saa/ebs5.png)
+
+![](assets/images/saa/ebs7.png)
+
+
+
+After you no longer need an Amazon EBS volume, you can delete it. After deletion, its data is gone and the volume can't be attached to any instance. However, before deletion, you can store a snapshot of the volume, which you can use to re-create the volume later.
+
+![](assets/images/saa/ebs6.png)
+
+
+![](assets/images/saa/ebs8.png)
