@@ -1,15 +1,25 @@
 ## AWS Certified Solutions Architect – Associate
 
+Go through all the 6 FAQs after the video
+
 (SAA-C02)
 To Delete: Use A Cloud Guru 7 days trial after reading
 
 ![](assets/images/saa/domain.png)
 
 720/1000 - 65 Questions
+Response types
+There are two types of questions on the exam:
 
--  Define a solution using architectural design principles based on customer requirements.
--  Provide implementation guidance based on best practices to an organization throughout the lifecycle of a
-  project
+- Multiple choice: Has one correct response and three incorrect responses (distractors)
+- Multiple response: Has two or more correct responses out of five or more response options
+
+---
+
+ Define a solution using architectural design principles based on customer requirements.
+
+ Provide implementation guidance based on best practices to an organization throughout the lifecycle of a
+project
 
 **Whitepapers**
 
@@ -17,9 +27,25 @@ Study tip: Focus on the following whitepapers
 
 AWS Well-Architected webpage : https://aws.amazon.com/architecture/well-architected/
 
-Study tip: Focus on the following FAQs
+⦁ TO attain operational excellence, a key AWS service is AWS cloud formation which lets you create templates that you can use to consistently provision whatever resources that you want for your application
 
-Amazon EC2(https://aws.amazon.com/ec2/faqs/) || Amazon S3(https://aws.amazon.com/s3/faqs/) || Amazon VPC(https://aws.amazon.com/vpc/faqs/) || Amazon Route 53(https://aws.amazon.com/route53/faqs/) || Amazon RDS(https://aws.amazon.com/rds/faqs/) || Amazon SQS(https://aws.amazon.com/sqs/faqs/)
+⦁ To attain the security pillar you need to use the key AWS service IAM to control user and programmatic access
+⦁ you can use cloudtrail to record API calls and VPC to launch resources into a virtual network
+
+⦁ For reliability you can use AWS shield to safe guard against DDOS attacks
+
+⦁ For performance the key service is cloudwatch which you can use to see how your services are holding up
+⦁ for cost optimization, you can use the cost explorer to see how much services are costing you
+
+AWS also has 6 FAQs that covers some of the key services in this exam:
+
+Study tip: Focus on the following FAQs
+⦁ EC2: https://aws.amazon.com/ec2/faqs/
+⦁ S3: https://aws.amazon.com/s3/faqs/
+⦁ VPC: https://aws.amazon.com/vpc/faqs/
+⦁ Route 53: https://aws.amazon.com/route53/faqs/
+⦁ rds: https://aws.amazon.com/rds/faqs/
+⦁ sqs: https://aws.amazon.com/sqs/faqs/
 
 Readinesss: https://www.aws.training/Details/Curriculum?id=20685
 
@@ -382,11 +408,61 @@ HDD-based volumes include **Throughput Optimized HDD (st1)** for frequently acce
 
 ![](assets/images/saa/ebs7.png)
 
-
-
 After you no longer need an Amazon EBS volume, you can delete it. After deletion, its data is gone and the volume can't be attached to any instance. However, before deletion, you can store a snapshot of the volume, which you can use to re-create the volume later.
 
 ![](assets/images/saa/ebs6.png)
 
-
 ![](assets/images/saa/ebs8.png)
+
+<h2>Amazon CloudFront - CDN</h2>
+Fast, highly secure and programmable content delivery network (CDN)
+
+Amazon CloudFront automatically maps network conditions and intelligently routes your user’s traffic to the most performant **_AWS edge location_** to serve up cached or dynamic content.
+
+![](assets/images/saa/cf.png)
+
+CloudFront offers the most advanced security capabilities, including field level encryption and HTTPS support, seamlessly integrated with AWS Shield, AWS Web Application Firewall and Amazon Route 53 to protect against multiple types of attacks including network and application layer DDoS attacks. These services co-reside at edge networking locations – globally scaled and connected via the AWS network backbone – providing a more secure, performant, and available experience for your users.
+
+CloudFront works seamlessly with any AWS origin, such as Amazon S3, Amazon EC2, Elastic Load Balancing, or with any custom HTTP origin.
+
+You can customize your content delivery through CloudFront using the secure and programmable edge computing features CloudFront Functions and AWS Lambda@Edge.
+
+Lambda@Edge is a feature of Amazon CloudFront that lets you run code closer to users of your application, which improves performance and reduces latency.
+
+![](assets/images/saa/cf2.png)
+
+![](assets/images/saa/cf3.png)
+
+![](assets/images/saa/cf9.png)
+
+<h2>Amazon Relational Database Service (RDS)</h2>
+
+Amazon RDS encrypts your databases using keys you manage with the AWS Key Management Service (KMS).
+
+Amazon RDS also supports Transparent Data Encryption (TDE) for SQL Server (SQL Server Enterprise Edition) and Oracle (Oracle Advanced Security option in Oracle Enterprise Edition).
+
+Automated backups
+The automated backup feature of Amazon RDS enables point-in-time recovery for your database instance. Amazon RDS will backup your database and transaction logs and store both for a user-specified retention period. This allows you to restore your database instance to any second during your retention period, up to the last five minutes. Your automatic backup retention period can be configured to up to thirty-five days.
+
+Database snapshots - Manual
+Database snapshots are user-initiated backups of your instance stored in Amazon S3 that are kept until you explicitly delete them.
+
+Automatic host replacement
+Amazon RDS will automatically replace the compute instance powering your deployment in the event of a hardware failure.
+
+![](assets/images/saa/rds.png)
+
+![](assets/images/saa/rds2.png)
+
+<h2>Amazon Aurora</h2>
+MySQL and PostgreSQL-compatible relational database built for the cloud.
+
+Get 5X the throughput of standard MySQL and 3X the throughput of standard PostgreSQL.
+
+To scale read capacity and performance, you can add up to 15 low latency read replicas across three Availability Zones
+
+Amazon Aurora automatically grows storage as needed, **up to 128TB per database instance**
+
+Amazon Aurora is designed to offer 99.99% availability, **replicating 6 copies of your data across 3 Availability Zones and backing up your data continuously to Amazon S3.** It transparently recovers from physical storage failures; instance failover typically takes less than 30 seconds
+
+Losing 2 copies wont affect write availability while losing up to 3 copies wont affect read avail.
