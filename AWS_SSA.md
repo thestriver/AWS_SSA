@@ -306,10 +306,9 @@ You can also pay for Dedicated Hosts which provide you with EC2 instance capacit
 
 ![](assets/images/saa/ami2.png)
 
-
 <h2>Auto Scaling groups</h2>
 
-An Auto Scaling group contains a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management. 
+An Auto Scaling group contains a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management.
 
 ![](assets/images/saa/asg.png)
 
@@ -343,10 +342,18 @@ Routes and load balances either at the transport layer (TCP/SSL), or at the appl
 
 ![](assets/images/saa/elb4.png)
 
-
 ![](assets/images/saa/elb5.png)
 
 ELB Health checks : it doesnt terminate unhelathy instances it just redirects to helathy instances
 
 ![](assets/images/saa/elb6.png)
 
+<h2>Amazon Elastic File System</h2>
+Simple, serverless, set-and-forget, elastic file system
+
+Amazon Elastic File System (EFS) automatically grows and shrinks as you add and remove files with no need for management or provisioning.
+
+![](assets/images/saa/efs.png)
+
+<h2>Amazon Elastic Block Store (EBS)</h2>
+Easy to use, high performance block storage at any scale. Virtual hard drive in the cloud. Create new volumes to EC2 instances, backup via snapshots and easy encryption.
