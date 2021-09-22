@@ -457,6 +457,8 @@ Amazon RDS will automatically replace the compute instance powering your deploym
 <h2>Amazon Aurora</h2>
 MySQL and PostgreSQL-compatible relational database built for the cloud.
 
+fault-tolerant and self-healing 
+
 Get 5X the throughput of standard MySQL and 3X the throughput of standard PostgreSQL.
 
 To scale read capacity and performance, you can add up to 15 low latency read replicas across three Availability Zones
@@ -466,3 +468,68 @@ Amazon Aurora automatically grows storage as needed, **up to 128TB per database 
 Amazon Aurora is designed to offer 99.99% availability, **replicating 6 copies of your data across 3 Availability Zones and backing up your data continuously to Amazon S3.** It transparently recovers from physical storage failures; instance failover typically takes less than 30 seconds
 
 Losing 2 copies wont affect write availability while losing up to 3 copies wont affect read avail.
+
+Babelfish is a new translation layer for Amazon Aurora PostgreSQL that enables Aurora to understand commands from applications written for Microsoft SQL Server. Run Microsoft SQL Server applications on PostgreSQL with little to no code change
+
+
+Amazon Aurora Parallel Query is a feature of the Amazon Aurora database that provides faster analytical queries over your current data, without having to copy the data into a separate system. It can speed up queries by up to two orders of magnitude, while maintaining high throughput for your core transactional workload.
+
+![](assets/images/saa/aur.png)
+
+![](assets/images/saa/aur1.png)
+
+![](assets/images/saa/aur3.png)
+
+
+<h2>Amazon Redshift - cloud data warehouse</h2>
+
+petabyte-scaling, columnar Storage
+
+![](assets/images/saa/red.png)
+
+AQUA (Advanced Query Accelerator) is a new distributed and hardware-accelerated cache that enables Amazon Redshift to run up to 10x faster than other enterprise cloud data warehouses by automatically boosting certain types of queries. AQUA is included with the with the Redshift RA3 ra3.4xl and ra3.16xl node types at no additional cost.
+
+
+![](assets/images/saa/red2.png)
+
+Amazon Redshift Concurrency Scaling
+Get consistent, fast query performance for highly concurrent workloads
+
+With new Amazon Redshift RA3 instances with managed storage, you can choose the number of nodes based on your performance requirements, and only pay for the managed storage that you use. This gives you the flexibility to size your RA3 cluster based on the amount of data you process daily without increasing your storage costs
+
+![](assets/images/saa/red3.png)
+
+![](assets/images/saa/red4.png)
+
+
+
+<h2>Amazon DynamoDB </h2>
+
+is a NoSQL **key-value and document database** that delivers single-digit millisecond performance at any scale. It's a fully managed, **multi-region, multi-active**, durable database with built-in security, backup and restore, and **in-memory caching** for internet-scale applications. DynamoDB can handle more than **10 trillion requests per day and can support peaks of more than 20 million requests per second.**
+
+SSD Storage - 3 regions
+
+Table:
+primary key: Partition and sort key
+item and attribute
+
+![](assets/images/saa/ddb.png)
+
+Amazon DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for Amazon DynamoDB
+
+Point-in-time recovery (PITR) for Amazon DynamoDB
+
+Use PartiQL, a SQL-compatible query language, to query, insert, update, and delete table data in DynamoDB.
+Use Amazon Kinesis Data Streams to capture item-level changes in your DynamoDB tables.
+
+AWS Pricing Calculator now supports Amazon DynamoDB.
+
+NoSQL Workbench is a unified visual tool that provides data modeling, data visualization, and query development features to help you design, create, query, and manage DynamoDB tables.
+
+Global tables replicate your DynamoDB tables automatically across your choice of AWS Regions.
+
+<h2>AWS Cloud​Formation - IaC</h2>
+Speed up cloud provisioning with infrastructure as code
+
+CF templates must list at least one resource
+
