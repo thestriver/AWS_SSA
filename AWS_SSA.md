@@ -533,3 +533,48 @@ Speed up cloud provisioning with infrastructure as code
 
 CF templates must list at least one resource
 
+Build serverless applications with SAM
+
+AWS Elastic Beanstalk provides an environment where you can easily deploy and run applications in the cloud
+
+Behind the scenes, Elastic Beanstalk uses CloudFormation to create and maintain resources
+
+AWS Quickstarts - a collection of pre-built CF templates
+
+
+![](assets/images/saa/cf1.png)
+
+<h2>Amazon CloudWatch</h2>
+Amazon CloudWatch is a monitoring and observability service
+Amazon CloudWatch is basically a metrics repository. An AWS service—such as Amazon EC2—puts metrics into the repository, and you retrieve statistics based on those metrics.
+![](assets/images/saa/cw.png)
+
+![](assets/images/saa/cw1.png)
+
+Amazon CloudWatch allows you to collect default metrics from more than 70 AWS services, such as Amazon EC2, Amazon DynamoDB, Amazon S3, Amazon ECS, AWS Lambda, and Amazon API Gateway, without any action on your part. For example, EC2 instances automatically publish CPU utilization, data transfer, and disk usage metrics to help you understand changes in state. You can use one of seven built-in metrics for API Gateway to detect latency or leverage one of eight built-in metrics for AWS Lambda to detect errors and throttles. If you need more detailed metrics beyond the default metrics, such as shard-level Amazon Kinesis Data Streams metrics, then you can simply opt-in per resource.
+Custom Metrics.
+
+Amazon CloudWatch allows you to collect custom metrics from your own applications to monitor operational performance, troubleshoot issues, and spot trends. 
+
+Amazon CloudWatch dashboards enable you to create re-usable graphs and visualize your cloud resources and applications in a unified view.
+
+High resolution alarms
+Amazon CloudWatch alarms allow you to set a threshold on metrics and trigger an action.
+
+![](assets/images/saa/cw2.png)
+
+
+![](assets/images/saa/cw3.png)
+
+Anomaly Detection
+Amazon CloudWatch Anomaly Detection applies machine-learning algorithms to continuously analyze data of a metric and identify anomalous behavior.
+
+ServiceLens
+You can use Amazon CloudWatch ServiceLens to visualize and analyze the health, performance, and availability of your applications in a single place.
+
+Synthetics
+Amazon CloudWatch Synthetics allows you to monitor application endpoints more easily
+
+Amazon CloudWatch Logs is also PCI and FedRamp compliant.
+
+Data is encrypted at rest and during transfer. You can also use AWS KMS encryption to encrypt your log groups for added compliance and security.
