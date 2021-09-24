@@ -382,7 +382,7 @@ Amazon Elastic File System (EFS) automatically grows and shrinks as you add and 
 ![](assets/images/saa/efs.png)
 
 <h2>Amazon Elastic Block Store (EBS)</h2>
-Easy to use, high performance block storage at any scale. Virtual hard drive in the cloud. Create new volumes to EC2 instances, backup via snapshots and easy encryption.
+Easy to use, high performance block storage at any scale. **Virtual hard drive in the cloud.** Create new volumes to EC2 instances, backup via snapshots and easy encryption.
 
 Throughput - data transfer rate
 Volumes are automatically replicated within their AZ.
@@ -763,6 +763,8 @@ On-premises access to virtually unlimited cloud storage
 ___
 <h2>Other Apps:</h2>
 
+**Analytics:**
+
 **Amazon Athena**
 
 Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage. Amazon Athena allows you to tap into all your data in S3 without the need to set up complex processes to extract, transform, and load the data (ETL). Start querying data instantly. Get results in seconds. Pay only for the queries you run.
@@ -783,11 +785,21 @@ Data integration is the process of preparing and combining data for analytics, m
 **Amazon QuickSight - Business Intelligence Service**
 Amazon QuickSight is a scalable, serverless, embeddable, machine learning-powered business intelligence (BI) service built for the cloud.
 
+
+**AWS Billing and Cost Management:**
+
+**AWS Cost Explorer** helps you visualize, understand, and manage your AWS costs and usage over a daily or monthly granularity.
+
+**AWS Budgets** is the simplest way to monitor your AWS spend and be alerted when you exceed or are forecasted to exceed your desired spending limit.
+
+
+Compute:
+**AWS Fargate** is a serverless, pay-as-you-go compute engine that lets you focus on building applications without managing servers
 **Amazon Elastic Kubernetes Service (EKS)** is a managed service and certified Kubernetes conformant to run Kubernetes on AWS and on-premises
 
 
-**AWS Fargate** is a serverless, pay-as-you-go compute engine that lets you focus on building applications without managing servers
 
+Management and Governance:
 **AWS Config**
 AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources.
 
@@ -800,3 +812,42 @@ AWS Config is a service that enables you to assess, audit, and evaluate the conf
 
 **AWS Systems Manager** is the operations hub for AWS. Systems Manager provides a unified user interface so you can track and resolve operational issues across your AWS applications and resources from a central place.
 
+
+**Migration and Transfer:**
+
+**AWS Database Migration Service (AWS DMS)** helps you migrate databases to AWS quickly and securely.
+
+
+**AWS DataSync** is an online data transfer service that simplifies, automates, and accelerates moving **data** between on-premises storage systems and **AWS Storage services**, as well as between AWS Storage services.
+
+**AWS Migration Hub** helps plan your migrations by allowing you to group related servers and resources that should be migrated together.
+
+**AWS Server Migration Service (SMS)** is an agentless service which makes it easier and faster for you to migrate thousands of on-premises **workloads** to AWS.
+
+**The AWS Transfer Family** provides fully managed support for file transfers directly into and out of **Amazon S3 or Amazon EFS**. With support for **Secure File Transfer Protocol (SFTP), File Transfer Protocol over SSL (FTPS), and File Transfer Protocol (FTP)**
+
+
+**Networking and Content Delivery:**
+
+**AWS Global Accelerator** combines advanced networking features with the dedicated AWS Global Network to improve your application network performance by up to 60%. When the internet is congested, AWS Global Accelerator optimizes the path to your application to keep packet loss, jitter, and latency consistently low.
+
+**AWS Transit Gateway** connects **VPCs and on-premises networks** through a central hub. This simplifies your network and puts an end to complex peering relationships. It acts as a cloud router – each new connection is only made once.
+
+**Security, Identity, and Compliance:**
+
+**AWS Directory Service** provides multiple ways to set up and run Microsoft Active Directory with other AWS services such as Amazon EC2, Amazon RDS for SQL
+
+**AWS Certificate Manager (ACM)** handles the complexity of creating, storing, and renewing public and private SSL/TLS X.509 certificates and keys that protect your AWS websites and applications.
+
+**AWS Secrets Manager** helps you protect secrets needed to access your applications, services, and IT resources.
+
+**AWS Shield** is a managed **Distributed Denial of Service (DDoS)** protection service that safeguards applications running on AWS.
+
+
+**Amazon Macie** is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect your sensitive data in AWS.
+
+**Storage:**
+
+**Amazon S3 Glacier** is a secure, durable, and extremely low-cost Amazon S3 storage class for data archiving and long-term backup.
+
+**Amazon FSx** makes it easy and cost effective to launch, run, and scale feature-rich, high-performance file systems in the cloud.
