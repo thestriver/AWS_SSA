@@ -189,7 +189,7 @@ There are _three types of VPC endpoints_:
 - Interface endpoints - cost money
   elastic network interface with a private IP address from the IP address range of your subnet. an entry point for traffic destined to a **supported AWS service or a VPC endpoint service.**
   ![](assets/images/saa/vpc13.png)
-- Gateway Load Balancer endpoints
+- Gateway governr endpoints
   elastic network interface with a private IP address from the IP address range of your subnet. **entry point to intercept traffic and route it to a service that you've configured using Gateway Load Balancers**
 
 - Gateway endpoints
@@ -457,7 +457,7 @@ Amazon RDS will automatically replace the compute instance powering your deploym
 <h2>Amazon Aurora</h2>
 MySQL and PostgreSQL-compatible relational database built for the cloud.
 
-fault-tolerant and self-healing 
+fault-tolerant and self-healing
 
 Get 5X the throughput of standard MySQL and 3X the throughput of standard PostgreSQL.
 
@@ -471,7 +471,6 @@ Losing 2 copies wont affect write availability while losing up to 3 copies wont 
 
 Babelfish is a new translation layer for Amazon Aurora PostgreSQL that enables Aurora to understand commands from applications written for Microsoft SQL Server. Run Microsoft SQL Server applications on PostgreSQL with little to no code change
 
-
 Amazon Aurora Parallel Query is a feature of the Amazon Aurora database that provides faster analytical queries over your current data, without having to copy the data into a separate system. It can speed up queries by up to two orders of magnitude, while maintaining high throughput for your core transactional workload.
 
 ![](assets/images/saa/aur.png)
@@ -480,7 +479,6 @@ Amazon Aurora Parallel Query is a feature of the Amazon Aurora database that pro
 
 ![](assets/images/saa/aur3.png)
 
-
 <h2>Amazon Redshift - cloud data warehouse</h2>
 
 petabyte-scaling, columnar Storage
@@ -488,7 +486,6 @@ petabyte-scaling, columnar Storage
 ![](assets/images/saa/red.png)
 
 AQUA (Advanced Query Accelerator) is a new distributed and hardware-accelerated cache that enables Amazon Redshift to run up to 10x faster than other enterprise cloud data warehouses by automatically boosting certain types of queries. AQUA is included with the with the Redshift RA3 ra3.4xl and ra3.16xl node types at no additional cost.
-
 
 ![](assets/images/saa/red2.png)
 
@@ -500,8 +497,6 @@ With new Amazon Redshift RA3 instances with managed storage, you can choose the 
 ![](assets/images/saa/red3.png)
 
 ![](assets/images/saa/red4.png)
-
-
 
 <h2>Amazon DynamoDB </h2>
 
@@ -541,7 +536,6 @@ Behind the scenes, Elastic Beanstalk uses CloudFormation to create and maintain 
 
 AWS Quickstarts - a collection of pre-built CF templates
 
-
 ![](assets/images/saa/cf1.png)
 
 <h2>Amazon CloudWatch</h2>
@@ -554,7 +548,7 @@ Amazon CloudWatch is basically a metrics repository. An AWS service—such as Am
 Amazon CloudWatch allows you to collect default metrics from more than 70 AWS services, such as Amazon EC2, Amazon DynamoDB, Amazon S3, Amazon ECS, AWS Lambda, and Amazon API Gateway, without any action on your part. For example, EC2 instances automatically publish CPU utilization, data transfer, and disk usage metrics to help you understand changes in state. You can use one of seven built-in metrics for API Gateway to detect latency or leverage one of eight built-in metrics for AWS Lambda to detect errors and throttles. If you need more detailed metrics beyond the default metrics, such as shard-level Amazon Kinesis Data Streams metrics, then you can simply opt-in per resource.
 Custom Metrics.
 
-Amazon CloudWatch allows you to collect custom metrics from your own applications to monitor operational performance, troubleshoot issues, and spot trends. 
+Amazon CloudWatch allows you to collect custom metrics from your own applications to monitor operational performance, troubleshoot issues, and spot trends.
 
 Amazon CloudWatch dashboards enable you to create re-usable graphs and visualize your cloud resources and applications in a unified view.
 
@@ -562,7 +556,6 @@ High resolution alarms
 Amazon CloudWatch alarms allow you to set a threshold on metrics and trigger an action.
 
 ![](assets/images/saa/cw2.png)
-
 
 ![](assets/images/saa/cw3.png)
 
@@ -578,3 +571,232 @@ Amazon CloudWatch Synthetics allows you to monitor application endpoints more ea
 Amazon CloudWatch Logs is also PCI and FedRamp compliant.
 
 Data is encrypted at rest and during transfer. You can also use AWS KMS encryption to encrypt your log groups for added compliance and security.
+
+Amazon EventBridge
+Amazon EventBridge is a serverless event bus that makes it easier to build event-driven applications at scale using events generated from your applications, integrated Software-as-a-Service (SaaS) applications, and AWS services
+
+EventBridge is the evolution of the CloudWatch Events service. It brings new features, including the ability to integrate data from popular SaaS providers as events within AWS.
+
+![](assets/images/saa/cw4.png)
+
+<h2>AWS CloudTrail</h2>
+Track user activity and API usage
+
+![](assets/images/saa/ct.png)
+**who to blame**
+
+![](assets/images/saa/ct1.png)
+
+AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure.
+
+![](assets/images/saa/ct3.png)
+Event history allows you to view, search, and download the past 90 days of activity in your AWS account.
+
+With AWS CloudTrail, you can simplify your compliance audits by automatically recording and storing event logs for actions made within your AWS account. Integration with Amazon CloudWatch Logs provides a convenient way to search through log data, identify out-of-compliance events, accelerate incident investigations, and expedite responses to auditor requests.
+
+ith Amazon CloudWatch Events integration, you can define workflows that execute when events that can result in security vulnerabilities are detected.
+
+![](assets/images/saa/ct-cw.png)
+
+![](assets/images/saa/ct4.png)
+
+![](assets/images/saa/ct5.png)
+
+<h2>AWS Lambda</h2>
+Run code without thinking about servers or clusters. Only pay for what you use.
+
+AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers, creating workload-aware cluster scaling logic, maintaining event integrations, or managing runtimes.
+
+The code you run on AWS Lambda is called a “Lambda function.” It is stateless with no affinity to the underlying infrastructure After you create your Lambda function, it is always ready to run as soon as it is triggered, similar to a formula in a spreadsheet.
+
+The AWS Lambda free usage tier includes 1M free requests per month and 400,000 GB-seconds of compute time per month.
+
+![](assets/images/saa/la.png)
+
+![](assets/images/saa/la1.png)
+
+![](assets/images/saa/la2.png)
+
+
+<h2>Amazon Simple Queue Service</h2>
+Fully managed message queues for microservices, distributed systems, and serverless applications
+
+![](assets/images/saa/sqs.png)
+
+![](assets/images/saa/sqs1.png)
+
+**To manage large Amazon Simple Queue Service (Amazon SQS) messages, you can use Amazon Simple Storage Service (Amazon S3) and the Amazon SQS Extended Client Library for Java. This is especially useful for storing and consuming messages between 256kb to 2 GB.**
+
+![](assets/images/saa/sqs3.png)
+
+![](assets/images/saa/sqs2.png)
+
+![](assets/images/saa/sqs4.png)
+
+
+![](assets/images/saa/sqs5.png)
+
+
+![](assets/images/saa/sqs6.png)
+
+
+![](assets/images/saa/sqs7.png)
+
+<h2>Amazon Simple Notification Service</h2>
+
+Amazon Simple Notification Service (Amazon SNS) is a fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication.
+![](assets/images/saa/sns.png)
+
+
+![](assets/images/saa/sns1.png)
+
+![](assets/images/saa/sns2.png)
+
+Amazon SNS enables you to modernize your applications and decouple them into smaller, independent components that are easier to develop, deploy, and maintain. 
+
+![](assets/images/saa/sns3.png)
+
+![](assets/images/saa/sns4.png)
+
+
+![](assets/images/saa/sns5.png)
+
+![](assets/images/saa/sns6.png)
+
+<h2>Amazon ElastiCache</h2>
+Fully managed in-memory data store, compatible with Redis or Memcached. Power real-time applications with sub-millisecond latency.
+
+![](assets/images/saa/es.png)
+
+
+![](assets/images/saa/es1.png)
+
+
+![](assets/images/saa/es2.png)
+
+![](assets/images/saa/es3.png)
+
+<h1>High availability - VIP</h1>
+
+![](assets/images/saa/ha.png)
+
+
+![](assets/images/saa/scio.png)
+
+<h2>AWS Elastic Beanstalk</h2> is an easy-to-use service for deploying and scaling web applications and services 
+without worrying about infastructure
+
+You can simply upload your code and Elastic Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring.
+There is no additional charge for Elastic Beanstalk - you pay only for the AWS resources needed to store and run your applications.
+
+![](assets/images/saa/eb.png)
+
+Elastic Beanstalk collects 40+ key metrics and attributes to determine the health of your application
+
+![](assets/images/saa/es5.png)
+
+
+<h2>Amazon API Gateway</h2>
+ is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. APIs act as the "front door" for applications to access data, business logic, or functionality from your backend services. Using API Gateway, you can create **RESTful APIs and WebSocket APIs that enable real-time two-way communication applications**. API Gateway supports containerized and serverless workloads, as well as web applications.
+
+![](assets/images/saa/ag.png)
+
+API Gateway **handles all the tasks involved in accepting and processing up to hundreds of thousands of concurrent API calls, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.** API Gateway has no minimum fees or startup costs. You pay for the API calls you receive and the amount of data transferred out and, with the API Gateway tiered pricing model, you can reduce your cost as your API usage scales.
+
+
+![](assets/images/saa/ag2.png)
+
+![](assets/images/saa/ag1.png)
+
+![](assets/images/saa/ag3.png)
+
+
+<h2>Amazon Kinesis</h2>
+Easily collect, process, and analyze video and data streams in real time
+
+![](assets/images/saa/ki.png)
+
+
+![](assets/images/saa/ki1.png)
+
+
+![](assets/images/saa/ki2.png)
+
+![](assets/images/saa/ki4.png)
+
+
+<h2>AWS Storage Gateway</h2>
+On-premises access to virtually unlimited cloud storage
+
+![](assets/images/saa/sg.png)
+
+![](assets/images/saa/sg1.png)
+
+
+![](assets/images/saa/sg2.png)
+
+
+
+![](assets/images/saa/sg4.png)
+
+
+![](assets/images/saa/sg5.png)
+
+![](assets/images/saa/sg3.png)
+
+![](assets/images/saa/sg6.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+___
+<h2>Other Apps:</h2>
+
+**Amazon Athena**
+
+Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage. Amazon Athena allows you to tap into all your data in S3 without the need to set up complex processes to extract, transform, and load the data (ETL). Start querying data instantly. Get results in seconds. Pay only for the queries you run.
+
+
+**AWS Glue**
+Simple, scalable, and serverless data integration
+Data integration is the process of preparing and combining data for analytics, machine learning, and application development. Data engineers and ETL (extract, transform, and load) developers can visually create, run, and monitor ETL workflows with a few clicks in AWS Glue Studio.
+
+
+**Amazon Elasticsearch Service (Amazon ES)** is a managed service that makes it easy to deploy, operate, and scale Elasticsearch clusters in the AWS Cloud.
+
+**Amazon OpenSearch Service** (successor to Amazon Elasticsearch Service) is a managed service that makes it easy to deploy, operate, and scale OpenSearch clusters in the AWS Cloud.
+
+
+**Amazon EMR** is the industry-leading cloud big data platform for processing vast amounts of data using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto. 
+
+**Amazon QuickSight - Business Intelligence Service**
+Amazon QuickSight is a scalable, serverless, embeddable, machine learning-powered business intelligence (BI) service built for the cloud.
+
+**Amazon Elastic Kubernetes Service (EKS)** is a managed service and certified Kubernetes conformant to run Kubernetes on AWS and on-premises
+
+
+**AWS Fargate** is a serverless, pay-as-you-go compute engine that lets you focus on building applications without managing servers
+
+**AWS Config**
+AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources.
+
+**AWS Organizations** helps you quickly scale your environment by allowing you to programmatically create new AWS accounts.
+
+
+**AWS Resource Access Manager (RAM)** helps you securely share your resources across AWS accounts, within your organization or organizational units (OUs) in AWS Organizations, and with IAM roles and IAM users for supported resource types. You can use AWS RAM to share transit gateways, subnets, AWS License Manager license configurations, Amazon Route 53 Resolver rules, and more resource types.
+
+**AWS Trusted Advisors** provides recommendations that help you follow AWS best practices. Trusted Advisor evaluates your account by using checks.
+
+**AWS Systems Manager** is the operations hub for AWS. Systems Manager provides a unified user interface so you can track and resolve operational issues across your AWS applications and resources from a central place.
+
