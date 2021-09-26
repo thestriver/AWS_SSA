@@ -52,9 +52,21 @@ Readinesss: https://www.aws.training/Details/Curriculum?id=20685
 ---
 
 <h2>S3: Simple Storage Service - Scalable storage in the cloud</h2>
-You can store 0 - 5 terabytes. Amazon S3 are managed at a regional level. Note: Amazon S3 is a global namespace but you still create your buckets within a region
+You can store 0 - 5 terabytes. Amazon S3 are managed at a regional level. 
+Note: Amazon S3 is a global namespace but you still create your buckets within a region
 
-- S3: object storage / S3 Glacier: low cost long-term archive and backup / Storage Gateway: Hybrid cloud storage with local caching / Snowcone (8TB)/ Snowballs Edge (50TB(compute-optimized) and 80TB(storage optimized) versions) / ~~Snowball Edge (100TB)~~, Snowmobile (100PB)
+highlyavailable and durable
+
+
+- S3: object storage 
+ S3 Glacier: low cost long-term archive and backup 
+
+ Storage Gateway: Hybrid cloud storage with **local caching** 
+ An AWS Storage Gateway volume gateway connects an on-premises software application with cloudbacked storage volumes that can be mounted as Internet Small Computer System Interface (iSCSI) devices from
+on-premises application servers. In cached volumes mode, all the data is stored in Amazon S3 and a copy of
+frequently accessed data is stored locally.
+ 
+  Snowcone (8TB)/ Snowballs Edge (50TB(compute-optimized) and 80TB(storage optimized) versions) / ~~Snowball Edge (100TB)~~, Snowmobile (100PB)
 
 - S3 Intelligent-Tiering uses ML to automatically monitors access patterns of objects and automatically moves them between the S3 Standard and S3 Standard-IA storage classes. It is not designed for archival data.
 - S3 Standard-IA is ideal for data that is infrequently accessed but requires high availability when needed.
@@ -129,6 +141,10 @@ Define and launch AWS resources in a logically isolated virtual network
 
 ![](assets/images/saa/vpc2.png)
 
+A NAT gateway forwards traffic from the instances in the private subnet to the internet or other AWS
+services, and then sends the response back to the instances. 
+After a NAT gateway is created, the route tables for private subnets must be updated to point internet traffic to the NAT gateway
+
 <h2>Amazon VPC features</h2>
 
 **Reachability Analyzer** Reachability Analyzer is a static configuration analysis tool that enables you to analyze and debug network reachability between two resources in your VPC.
@@ -189,15 +205,17 @@ There are _three types of VPC endpoints_:
 - Interface endpoints - cost money
   elastic network interface with a private IP address from the IP address range of your subnet. an entry point for traffic destined to a **supported AWS service or a VPC endpoint service.**
   ![](assets/images/saa/vpc13.png)
-- Gateway governr endpoints
-  elastic network interface with a private IP address from the IP address range of your subnet. **entry point to intercept traffic and route it to a service that you've configured using Gateway Load Balancers**
+- Gateway Load Balancer endpoints
+  elastic network interface with a private IP address from the IP address range of your subnet. **entry point to intercept traffic and route it to a service that you've configured using Gateway Load Balancers**for example, for security inspection.
 
-- Gateway endpoints
-  Free..
-  supports:
+- Gateway endpoints  supports:
   Amazon S3
   DynamoDB
+    Free..
+
   You specify a gateway endpoint as a route table target for traffic that is destined for the supported AWS services.
+
+**to integrate with S3 with  restricting any internet-bound traffic = Use A gateway endpoint.**
 
 ![](assets/images/saa/vpc14.png)
 
@@ -312,6 +330,9 @@ Amazon Route 53 effectively connects user requests to infrastructure running in 
 
 ![](assets/images/saa/route2.png)
 
+Amazon Route 53 alias records provide a Route 53–specific extension to DNS functionality. Alias records let you route traffic to selected AWS resources, such as CloudFront distributions and Amazon S3 buckets.
+![](assets/images/saa/route4.png)
+
 <h2>Amazon Elastic Compute Cloud (Amazon EC2)</h2>
 
 ![](assets/images/saa/ec2.png)
@@ -332,6 +353,8 @@ You can also pay for Dedicated Hosts which provide you with EC2 instance capacit
 
 ![](assets/images/saa/ami2.png)
 
+– Hibernating an instance saves the contents of RAM to the Amazon EBS root volume. When the instance restarts, the RAM contents are reloaded.
+
 <h2>Auto Scaling groups</h2>
 
 An Auto Scaling group contains a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management.
@@ -340,19 +363,26 @@ An Auto Scaling group contains a collection of Amazon EC2 instances that are tre
 
 ![](assets/images/saa/asg1.png)
 
+
+With target tracking, you select a load metric for your application, such as “Average CPU Utilization” or the new “Request Count Per Target” metric from Application Load Balancer, set the target value, and Auto Scaling adjusts the number of EC2 instances in your Auto Scaling group as needed to maintain that target.
+
 launch templates is launch configurations with versioning
+
 
 <h2>Elastic Load Balancing</h2>
 
 ![](assets/images/saa/elb1.png)
 
 Elastic Load Balancing types
-Elastic Load Balancing provides four types of load balancers that can be used with your Auto Scaling group: Application Load Balancers, Network Load Balancers, Gateway Load Balancers, and Classic Load Balancers.
+
+Elastic Load Balancing provides **four types of load balancers** that can be used with your Auto Scaling group: Application Load Balancers, Network Load Balancers, Gateway Load Balancers, and Classic Load Balancers.
 
 There is a key difference in how the load balancer types are configured. With Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, instances are registered as targets with a target group, and you route traffic to the target group. With Classic Load Balancers, instances are registered directly with the load balancer.
 
 Application Load Balancer
 Routes and load balances at the application layer (HTTP/HTTPS), and supports path-based routing. An Application Load Balancer can route requests to ports on one or more registered targets, such as EC2 instances, in your virtual private cloud (VPC).
+
+**Today we’re launching support for multiple TLS/SSL certificates on Application Load Balancers (ALB) using Server Name Indication (SNI). You can now host multiple TLS secured applications, each with its own TLS certificate, behind a single load balancer. In order to use SNI, all you need to do is bind multiple certificates to the same secure listener on your load balancer. ALB will automatically choose the optimal TLS certificate for each client. These new features are provided at no additional charge.**
 
 Network Load Balancer
 Routes and load balances at the transport layer (TCP/UDP Layer-4), based on address information extracted from the TCP packet header, not from packet content. Network Load Balancers can handle traffic bursts, retain the source IP of the client, and use a fixed IP for the life of the load balancer.
@@ -370,7 +400,11 @@ Routes and load balances either at the transport layer (TCP/SSL), or at the appl
 
 ![](assets/images/saa/elb5.png)
 
-ELB Health checks : it doesnt terminate unhelathy instances it just redirects to helathy instances
+**ELB Health checks : it doesnt terminate unhelathy instances it just redirects to helathy instances**
+
+An Application Load Balancer (ALB) sends requests to healthy instances only. An ALB performs periodic
+health checks on targets in a target group. An instance that fails health checks for a configurable number of consecutive times is considered unhealthy. The load balancer will no longer send requests to the instance until it
+passes another health check.
 
 ![](assets/images/saa/elb6.png)
 
@@ -482,6 +516,8 @@ Amazon Aurora Parallel Query is a feature of the Amazon Aurora database that pro
 <h2>Amazon Redshift - cloud data warehouse</h2>
 
 petabyte-scaling, columnar Storage
+
+If enhanced VPC routing is not enabled, Amazon Redshift routes traffic through the internet, including traffic to other services within the AWS network.
 
 ![](assets/images/saa/red.png)
 
@@ -642,6 +678,9 @@ Fully managed message queues for microservices, distributed systems, and serverl
 
 ![](assets/images/saa/sqs7.png)
 
+– When the ReceiveMessageWaitTimeSeconds property of a queue is set to a value greater than zero,long
+polling is in effect. Long polling reduces the number of empty responses by allowing Amazon SQS to wait until a message is available before sending a response to a ReceiveMessage request. 
+
 <h2>Amazon Simple Notification Service</h2>
 
 Amazon Simple Notification Service (Amazon SNS) is a fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication.
@@ -712,7 +751,7 @@ API Gateway **handles all the tasks involved in accepting and processing up to h
 
 
 <h2>Amazon Kinesis</h2>
-Easily collect, process, and analyze video and data streams in real time
+Easily collect, process, and analyze video and data streams in **real time**
 
 ![](assets/images/saa/ki.png)
 
@@ -849,5 +888,26 @@ AWS Config is a service that enables you to assess, audit, and evaluate the conf
 **Storage:**
 
 **Amazon S3 Glacier** is a secure, durable, and extremely low-cost Amazon S3 storage class for data archiving and long-term backup.
+Archive Retrieval Options
+You can specify one of the following when initiating a job to retrieve an archive based on your access time and cost requirements. For information about retrieval pricing, see the S3 Glacier Pricing.
+
+Expedited — Expedited retrievals allow you to quickly access your data when occasional urgent requests for a subset of archives are required. For all but the largest archives (250 MB+), data accessed using Expedited retrievals are typically made available within 1–5 minutes. Provisioned Capacity ensures that retrieval capacity for Expedited retrievals is available when you need it. For more information, see Provisioned Capacity.
+
+Standard — Standard retrievals allow you to access any of your archives within several hours. Standard retrievals typically complete within 3–5 hours. This is the default option for retrieval requests that do not specify the retrieval option.
+
+Bulk — Bulk retrievals are S3 Glacier’s lowest-cost retrieval option, which you can use to retrieve large amounts, even petabytes, of data inexpensively in a day. Bulk retrievals typically complete within 5–12 hours.
 
 **Amazon FSx** makes it easy and cost effective to launch, run, and scale feature-rich, high-performance file systems in the cloud.
+
+
+AWS SERVICES THAT ENABLE HIGH AVAILABILITY
+
+Amazon Regions and Availability Zones
+Amazon Virtual Private Cloud (VPC)
+Amazon Elastic Load Balancing (ELB)
+Amazon Simple Queue Service (SQS)
+Amazon Elastic Cloud Compute (EC2)
+Amazon Elastic IP Addresses (EIP)
+Amazon Route53
+Amazon CloudWatch
+Amazon Auto Scaling
