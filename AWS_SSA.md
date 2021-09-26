@@ -167,6 +167,9 @@ Read more: https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway
 
 **Security Groups:** Security groups act as a firewall for associated Amazon EC2 instances, controlling both inbound and outbound traffic at the **instance level.**
 
+They're stateless meaning you dont need to open outbound for responses just need open only inbound for requests
+port 443 - HTTPS
+
 **Network Access Control List**: A network access control list (ACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more **subnets.**
 
 ![](assets/images/saa/vpc3.png)
@@ -368,6 +371,7 @@ With target tracking, you select a load metric for your application, such as “
 
 launch templates is launch configurations with versioning
 
+The Cooldown period is a configurable setting for your Auto Scaling group, ensuring that it doesn't launch or terminate additional instances before the previous scaling activity takes effect. After the Auto Scaling group dynamically scales using a simple Scaling Policy, it waits for the Cooldown period to complete before resuming scaling activities.
 
 <h2>Elastic Load Balancing</h2>
 
