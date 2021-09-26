@@ -184,12 +184,16 @@ Instances that you launch into a **default subnet** receive both a public IPv4 a
 ![](assets/images/saa/vpc5.png)
 
 <h2>A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. Instances in either VPC can communicate with each other as if they are within the same network.</h2>
+In a VPC peering connection, using the NAT Gateway of another VPC becomes transitive routing and is not supported in AWS.
 
 ![](assets/images/saa/vpc6.png)
 
 ![](assets/images/saa/vpc7.png)
 
 Bastion hosts (also called “jump servers”) are often used as a best practice for accessing privately accessible hosts within a system environment.
+
+
+Configure the security groups of the Windows server instances to only accept TCP/3389 connections from the security group of the Windows bastion host. because with this option, Windows server instances only allow the RDP traffic from the bastion host instance. Users need to login to the bastion host to connect to the Windows servers.
 
 you can reduce your system’s attack surface while also offering greater visibility into commands issued on your hosts. The solution is to replace your bastion host by using Amazon EC2 Systems Manager.
 
@@ -581,6 +585,7 @@ AWS Quickstarts - a collection of pre-built CF templates
 <h2>Amazon CloudWatch</h2>
 Amazon CloudWatch is a monitoring and observability service
 Amazon CloudWatch is basically a metrics repository. An AWS service—such as Amazon EC2—puts metrics into the repository, and you retrieve statistics based on those metrics.
+
 ![](assets/images/saa/cw.png)
 
 ![](assets/images/saa/cw1.png)
@@ -840,7 +845,8 @@ Compute:
 **AWS Fargate** is a serverless, pay-as-you-go compute engine that lets you focus on building applications without managing servers
 **Amazon Elastic Kubernetes Service (EKS)** is a managed service and certified Kubernetes conformant to run Kubernetes on AWS and on-premises
 
-
+**Amazon Elastic Container Service**
+Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service that helps you easily deploy, manage, and scale containerized applications. 
 
 Management and Governance:
 **AWS Config**
