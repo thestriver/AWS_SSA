@@ -167,7 +167,8 @@ Read more: https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway
 
 **Security Groups:** Security groups act as a firewall for associated Amazon EC2 instances, controlling both inbound and outbound traffic at the **instance level.**
 
-They're stateless meaning you dont need to open outbound for responses just need open only inbound for requests
+
+
 port 443 - HTTPS
 
 **Network Access Control List**: A network access control list (ACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more **subnets.**
@@ -644,6 +645,7 @@ ith Amazon CloudWatch Events integration, you can define workflows that execute 
 ![](assets/images/saa/ct-cw.png)
 
 ![](assets/images/saa/ct4.png)
+. There are three types of events that can be logged in CloudTrail: management events, data events, and CloudTrail Insights events. By default, trails log management events, but not data or Insights events.
 
 ![](assets/images/saa/ct5.png)
 
@@ -655,6 +657,8 @@ AWS Lambda is a serverless compute service that lets you run code without provis
 The code you run on AWS Lambda is called a “Lambda function.” It is stateless with no affinity to the underlying infrastructure After you create your Lambda function, it is always ready to run as soon as it is triggered, similar to a formula in a spreadsheet.
 
 The AWS Lambda free usage tier includes 1M free requests per month and 400,000 GB-seconds of compute time per month.
+
+AWS Lambda automatically monitors Lambda functions and reports metrics through Amazon CloudWatch. Lambda tracks the number of requests, the latency per request, and the number of requests resulting in an error. You can view the request rates and error rates using the AWS Lambda Console, the CloudWatch console, and other AWS resources.
 
 ![](assets/images/saa/la.png)
 
@@ -842,11 +846,14 @@ Amazon QuickSight is a scalable, serverless, embeddable, machine learning-powere
 
 
 Compute:
+
 **AWS Fargate** is a serverless, pay-as-you-go compute engine that lets you focus on building applications without managing servers
 **Amazon Elastic Kubernetes Service (EKS)** is a managed service and certified Kubernetes conformant to run Kubernetes on AWS and on-premises
 
 **Amazon Elastic Container Service**
 Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service that helps you easily deploy, manage, and scale containerized applications. 
+
+**AWS Step Functions** is a low-code visual workflow service used to orchestrate AWS services, automate business processes, and build serverless applications.
 
 Management and Governance:
 **AWS Config**
