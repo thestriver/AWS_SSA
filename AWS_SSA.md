@@ -108,7 +108,9 @@ N.B Delete can only be done by a root user.
   Amazon S3 Transfer Acceleration can speed up content transfers to and from Amazon S3 by as much as 50-500% for long-distance transfer of larger objects.
   S3 Transfer Acceleration (S3TA) reduces the variability in Internet routing, congestion and speeds that can affect transfers, and logically shortens the distance to S3 for remote applications. S3TA improves transfer performance by routing traffic through Amazon CloudFront’s globally distributed Edge Locations and over AWS backbone networks, and by using network protocol optimizations. A distinct url is used by the users.
 
-- Presigned URLS - generated using AWS **CLI or SDK** and provides temp access to **private objects**
+
+
+You can generate a presigned URL programmatically using the REST API, the AWS Command Line Interface, and the AWS SDK for Java, .NET, Ruby, PHP, Node.js, Python, and Go.
 
 Official doc:
 https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html
@@ -518,6 +520,8 @@ Babelfish is a new translation layer for Amazon Aurora PostgreSQL that enables A
 
 Amazon Aurora Parallel Query is a feature of the Amazon Aurora database that provides faster analytical queries over your current data, without having to copy the data into a separate system. It can speed up queries by up to two orders of magnitude, while maintaining high throughput for your core transactional workload.
 
+
+
 ![](assets/images/saa/aur.png)
 
 ![](assets/images/saa/aur1.png)
@@ -569,6 +573,10 @@ AWS Pricing Calculator now supports Amazon DynamoDB.
 NoSQL Workbench is a unified visual tool that provides data modeling, data visualization, and query development features to help you design, create, query, and manage DynamoDB tables.
 
 Global tables replicate your DynamoDB tables automatically across your choice of AWS Regions.
+
+gateway endpoint + route table entry  = ensure that API calls to Amazon DynamoDB from Amazon EC2 instances in a VPC do not traverse the internet
+
+indexed metadata  =  DynamoDB
 
 <h2>AWS Cloud​Formation - IaC</h2>
 Speed up cloud provisioning with infrastructure as code
@@ -930,3 +938,8 @@ Amazon Elastic IP Addresses (EIP)
 Amazon Route53
 Amazon CloudWatch
 Amazon Auto Scaling
+
+
+
+DR -Disaster recovery options in the cloud
+![](assets/images/saa/dr.png)
